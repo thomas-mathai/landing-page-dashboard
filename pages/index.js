@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -20,9 +17,7 @@ export default function Home() {
   };
 
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-center p-6 ${inter.className}`}
-    >
+    <main className="flex min-h-screen flex-col items-center justify-center p-6">
       <div className="lg:p-10 p-6 border border-gray-400 rounded-xl w-full max-w-lg">
         <h1 className="text-3xl font-semibold mb-6">Login</h1>
         <div className="flex flex-col space-y-4">
