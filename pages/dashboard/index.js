@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import AuthWrapper from "../components/AuthWrapper";
 import { LANDING_DATA } from "../components/constants";
 import Header from "../components/Header";
+import Card from "../components/Card";
 
 const Dashboard = () => {
   const [pages, setPages] = useState([]);
@@ -23,21 +24,12 @@ const Dashboard = () => {
     <AuthWrapper>
       <div className="flex flex-col">
         <Header />
-        <div className="flex-grow p-6">
+        <div className="flex-grow px-6 py-20 bg-white">
           <div className="mx-auto max-w-screen-xl">
-            <ul>
+            <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
               {pages.map((page) => (
                 <li key={page.id}>
-                  <h2>{page.title}</h2>
-                  <button
-                    onClick={() => router.push(`/dashboard/edit/${page.id}`)}
-                  >
-                    Edit
-                  </button>
-                  <button onClick={() => router.push(`/landing/${page.id}`)}>
-                    View
-                  </button>
-                  <button onClick={() => handleDelete(page.id)}>Delete</button>
+                  <Card page={page} />
                 </li>
               ))}
             </ul>
