@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 
-import AuthWrapper from "../components/AuthWrapper";
-import { LANDING_DATA } from "../components/constants";
-import Header from "../components/Header";
-import Card from "../components/Card";
+import AuthWrapper from "../../components/AuthWrapper";
+import { LANDING_DATA } from "../../components/constants";
+import Header from "../../components/Header";
+import Card from "../../components/Card";
 
 const Dashboard = () => {
   const [pages, setPages] = useState([]);
-  const router = useRouter();
 
   useEffect(() => {
     setPages(LANDING_DATA);
@@ -29,7 +27,7 @@ const Dashboard = () => {
             <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
               {pages.map((page) => (
                 <li key={page.id}>
-                  <Card page={page} />
+                  <Card page={page} handleDelete={handleDelete} />
                 </li>
               ))}
             </ul>

@@ -1,4 +1,4 @@
-const Card = ({ page }) => {
+const Card = ({ page, handleDelete }) => {
   const { id, title, description, image } = page;
   return (
     <div className="border overflow-hidden border-gray-400 rounded-xl transform transition duration-500 hover:scale-[1.04]">
@@ -13,9 +13,9 @@ const Card = ({ page }) => {
           >
             <i class="ri-edit-line text-xl hover:text-blue-600"></i>
           </button>
-          <button onClick={() => router.push(`/landing/${id}`)} title="View">
+          <a href={`/dashboard/${id}`} title="View">
             <i class="ri-eye-fill text-xl hover:text-blue-600"></i>
-          </button>
+          </a>
           <button onClick={() => handleDelete(id)}>
             <i
               class="ri-delete-bin-line text-xl hover:text-red-600"
