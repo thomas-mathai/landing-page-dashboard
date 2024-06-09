@@ -7,12 +7,9 @@ const Card = ({ page, handleDelete }) => {
         <h4 className="title-font font-bold text-xl text-gray-900">{title}</h4>
         <p className="leading-relaxed font-normal">{description}</p>
         <div className="flex gap-3">
-          <button
-            onClick={() => router.push(`/dashboard/edit/${id}`)}
-            title="Edit"
-          >
+          <a href={`/dashboard/edit/${id}`} title="Edit">
             <i class="ri-edit-line text-xl hover:text-blue-600"></i>
-          </button>
+          </a>
           <a href={`/dashboard/${id}`} title="View">
             <i class="ri-eye-fill text-xl hover:text-blue-600"></i>
           </a>
